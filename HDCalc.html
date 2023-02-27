@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>잔넬 단가 계산기</title>
+    <link rel="stylesheet" href="HDCalc.css" />
+  </head>
+  <body>
+    <h1>잔넬 단가 계산기</h1>
+
+    <label for="type">종류</label>
+    <select id="type">
+      <option value="1">갈바후광영문</option>
+      <option value="2">갈바후광한글</option>
+      <option value="3">갈바오사이</option>
+      <option value="4">갈바캡잔넬</option>
+      <option value="5">일체형잔넬</option>
+      <option value="6">타카잔넬</option>
+      <option value="7">스텐알미늄캡</option>
+      <option value="8">스텐오사이</option>
+      <option value="9">스텐후광</option>
+      <option value="10">골드스텐</option>
+    </select>
+
+    <label for="size">규격</label>
+    <select id="size">
+      <option value="200">200</option>
+      <option value="250">250</option>
+      <option value="300">300</option>
+      <option value="350">350</option>
+      <option value="400">400</option>
+      <option value="450">450</option>
+      <option value="500">500</option>
+      <option value="550">550</option>
+      <option value="600">600</option>
+      <option value="650">650</option>
+      <option value="700">700</option>
+      <option value="750">750</option>
+      <option value="800">800</option>
+      <option value="850">850</option>
+      <option value="900">900</option>
+      <option value="950">950</option>
+      <option value="1000">1000</option>
+      <option value="1100">1100</option>
+      <option value="1200">1200</option>
+      <option value="1300">1300</option>
+      <option value="1400">1400</option>
+      <option value="1500">1500</option>
+      <option value="1600">1600</option>
+      <option value="1700">1700</option>
+      <option value="1800">1800</option>
+      <option value="1900">1900</option>
+      <option value="2000">2000</option>
+    </select>
+    <label for="quantity">수량</label>
+    <input type="number" id="quantity" value="1" min="1" />
+
+    <button onclick="calculate()">계산하기</button>
+
+    <div id="result"></div>
+    <script src="HDCalc.js"></script>
+  </body>
+</html>
