@@ -1,13 +1,13 @@
 body {
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "배달의민족 주아", sans-serif;
   font-size: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f8f8f3; /* 배경색 추가 */
-  box-shadow: 0 0 10px rgba(19, 19, 19, 0.3); /* 그림자 추가 */
+  background-color: #f8f8f3;
+  box-shadow: 0 0 10px rgba(19, 19, 19, 0.3);
 }
 
 label {
@@ -22,6 +22,7 @@ input {
   border-radius: 5px;
   border: 1px solid #ccc;
   margin-bottom: 1rem;
+  margin-top: 0.5rem; /* 수정된 부분 */
 }
 
 button {
@@ -32,10 +33,20 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 0.5rem; /* 수정된 부분 */
 }
 
 #result {
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+  /* 웹사이트 크기를 변경하지 않게 하는 부분 */
+  input,
+  select,
+  button {
+    max-width: 300px;
+  }
 }
