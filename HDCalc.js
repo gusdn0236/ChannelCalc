@@ -73,8 +73,9 @@ function calculate() {
   // 총 가격에 쉼표 추가
   const totalPriceWithComma = totalPrice.toLocaleString();
 
-  // 총 가격 출력
-  document.getElementById("result").innerHTML = `총 가격: ${totalPriceWithComma}원`;
+  // 결과 출력
+  const result = `${document.getElementById("type").options[type - 1].text} ${size}mm  × ${quantity}개 = ${totalPriceWithComma}원`;
+  document.getElementById("result").innerHTML = result + "<br><br>";
 }
 
 document.addEventListener("keydown", function (event) {
