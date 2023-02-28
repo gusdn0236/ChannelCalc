@@ -76,3 +76,12 @@ function calculate() {
   // 총 가격 출력
   document.getElementById("result").innerHTML = `총 가격: ${totalPriceWithComma}원`;
 }
+
+document.addEventListener("keydown", function (event) {
+  if (event.keyCode === 13) {
+    if (event.target.tagName.toLowerCase() === "input") {
+      event.preventDefault();
+      calculate();
+    }
+  }
+});
