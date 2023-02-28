@@ -51,8 +51,21 @@ function calculate() {
       alert("종류를 선택해주세요.");
       return;
   }
+
   // 선택된 규격에 해당하는 단가 가져오기
-  const unitPrice = priceTable[size / 50 - 4];
+  let index = -1;
+  if (size >= 200 && size <= 1000 && size % 50 === 0) {
+    index = (size - 200) / 50;
+  } else if (size > 1000 && size <= 2000 && size % 100 === 0) {
+    index = 16 + (size - 1000) / 100;
+  }
+
+  if (index === -1 || index >= priceTable.length) {
+    alert("단가표에 해당 금액이 없습니다.");
+    return;
+  }
+
+  const unitPrice = priceTable[index];
 
   // 총 가격 계산
   const totalPrice = unitPrice * quantity;
