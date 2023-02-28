@@ -85,3 +85,11 @@ document.addEventListener("keydown", function (event) {
     }
   }
 });
+
+// 사용자가 input 박스를 클릭하면 기본값 지우기
+document.getElementById("quantity").addEventListener("click", function () {
+  const input = document.getElementById("quantity");
+  if (input.value === "1") {
+    input.value = "";
+  }
+});
