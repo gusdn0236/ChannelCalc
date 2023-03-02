@@ -25,6 +25,10 @@ input {
   margin-top: 0.5rem; /* 수정된 부분 */
 }
 
+#frameCalculate {
+  border: 1px solid rgb(231, 213, 213);
+  padding: 30px;
+}
 .calcButton {
   padding: 0.5rem 1rem;
   font-size: 1rem;
