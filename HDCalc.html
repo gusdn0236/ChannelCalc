@@ -56,10 +56,48 @@
     <label for="quantity">수량</label>
     <input type="number" id="quantity" value="1" min="1" />
 
-    <button onclick="calculate()">계산하기</button>
+    <button class="calcButton" onclick="calculate()">계산하기</button>
     <div id="result" style="font-weight: bold; margin-top: 30px"></div>
 
     <div id="result"></div>
+
+    <!-- 여기서부터는 후렘 계산기 -->
+    <button id="barFrame" class="frameButton">바 후렘 추가</button>
+    <div id="barContainer" class="canHide">
+      <button id="alminumBar">알미늄 후렘</button>
+      <div id="alminumBarCalc">
+        <!-- 알미늄 후렘 계산기 내용 -->
+        <div id="alminumBar-calc" class="calc-box">
+          <label for="alminumBar-length">길이 (m):</label>
+          <input type="number" id="alminumBar-length" />
+          <button id="alminumBar-calc-btn">계산하기</button>
+          <br />
+          <strong id="alminumBar-result" class="result"></strong>
+        </div>
+      </div>
+      <button id="galbaBar">갈바 후렘</button>
+      <div id="galbaBarCalc">
+        <!-- 갈바 후렘 계산기 내용 -->
+        <div id="galbaBar-calc" class="calc-box">
+          <label for="galbaBar-height">높이:</label>
+          <select id="galbaBar-height">
+            <option value="200">200mm</option>
+            <option value="300">300mm</option>
+            <option value="400">400mm</option>
+          </select>
+          <label for="galbaBar-length">길이 (m):</label>
+          <input type="number" id="galbaBar-length" />
+          <button id="galbaBar-calc-btn">계산하기</button>
+          <br />
+          <strong id="galbaBar-result" class="result"></strong>
+        </div>
+      </div>
+    </div>
+
+    <button id="normalFrame" class="frameButton">일반 후렘 추가</button>
+    <div id="normalContainer" class="canHide"></div>
+
+    <!-- js 연결 -->
     <script src="HDCalc.js"></script>
   </body>
 </html>

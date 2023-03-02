@@ -78,6 +78,7 @@ function calculate() {
   document.getElementById("result").innerHTML = result + "<br><br>";
 }
 
+//엔터키로 계산하기 버튼 작동
 document.addEventListener("keydown", function (event) {
   if (event.keyCode === 13) {
     if (event.target.tagName.toLowerCase() === "input") {
@@ -93,4 +94,106 @@ document.getElementById("quantity").addEventListener("click", function () {
   if (input.value === "1") {
     input.value = "";
   }
+});
+
+//바후렘, 일반후렘 버튼변수
+const barFrame = document.getElementById("barFrame");
+const normalFrame = document.getElementById("normalFrame");
+
+//바후렘, 일반후렘 컨테이너 변수
+const barContainer = document.getElementById("barContainer");
+const normalContainer = document.getElementById("normalContainer");
+
+//바 후렘 변수
+const alminumBar = document.getElementById("alminumBar");
+const galbaBar = document.getElementById("galbaBar");
+
+//바후렘 계산기변수(div 박스묶음용)
+const alminumBarCalc = document.getElementById("alminumBarCalc");
+const galbaBarCalc = document.getElementById("galbaBarCalc");
+
+//실제 계산용 알미늄 바 변수
+const alminumBar_calc = document.getElementById("alminumBar-calc");
+const alminumBar_length = document.getElementById("alminumBar-length");
+const alminumBar_result = document.getElementById("alminumBar-result");
+
+//실제 계산용 갈바 바 변수
+const galbaBar_calc = document.getElementById("galbaBar-calc");
+
+//실제 계산용 알미늄,갈바 계산하기버튼
+const alminumBar_calc_btn = document.getElementById("alminumBar-calc-btn");
+const galbaBar_calc_btn = document.getElementById("galbaBar-calc-btn");
+
+//숨기기가 가능한 박스묶음
+const canHide = document.getElementsByClassName("canHide");
+
+// 모든 계산기 숨기는 함수
+function hideAllCanHide() {
+  for (let i = 0; i < canHide.length; i++) {
+    canHide[i].style.display = "none";
+  }
+}
+
+//초기화면 버튼 숨기기
+hideAllCanHide();
+
+//바후렘 버튼추가를 눌렀을때
+barFrame.addEventListener("click", () => {
+  hideAllCanHide();
+  barContainer.style.display = "block";
+  alminumBarCalc.style.display = "none";
+  galbaBarCalc.style.display = "none";
+});
+
+//일반 후렘 버튼추가 를 눌렀을때
+normalFrame.addEventListener("click", () => {
+  hideAllCanHide();
+  normalContainer.style.display = "block";
+});
+
+//알미늄 후렘 버튼을 눌렀을때
+alminumBar.addEventListener("click", () => {
+  galbaBarCalc.style.display = "none";
+  alminumBarCalc.style.display = "block";
+});
+
+//갈바 후렘 버튼을 눌렀을때
+galbaBar.addEventListener("click", () => {
+  alminumBarCalc.style.display = "none";
+  galbaBarCalc.style.display = "block";
+});
+
+// 얼마늄바 후렘 계산 버튼 클릭 시
+alminumBar_calc_btn.addEventListener("click", () => {
+  const length = alminumBar_length.value;
+  const price = 35000;
+  const result = length * price;
+  alminumBar_result.textContent = `알미늄 후렘 ${length}M = ${formatPrice(result)}원`;
+});
+
+// 가격 포맷 함수
+function formatPrice(price) {
+  return new Intl.NumberFormat("ko-KR", { maximumSignificantDigits: 3 }).format(price);
+}
+
+// 알미늄바 엔터키로 계산하기-M에 focus이벤트
+alminumBar_length.addEventListener("focus", () => {
+  document.addEventListener("keydown", calculateOnEnter);
+});
+
+// enter 키 이벤트 핸들러 함수
+function calculateOnEnter(event) {
+  if (event.keyCode === 13) {
+    const activeInput = document.activeElement;
+    if (activeInput.tagName.toLowerCase() === "input") {
+      event.preventDefault();
+      const calcBtn = activeInput.parentElement.querySelector("button");
+      calcBtn.click();
+    }
+  }
+}
+
+// 해당 input 요소에서 focus가 해제될 때, enter 키 이벤트 핸들러 제거
+alminumBar_length.addEventListener("blur", () => {
+  document.removeEventListener("keydown", calculateOnEnter);
 });
