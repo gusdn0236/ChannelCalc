@@ -207,7 +207,7 @@ normal_calc_btn.addEventListener("click", () => {
   const width = normal_width.value;
   const height = normal_height.value;
   const result = ((width * height) / 1000000) * 120000;
-  normal_result.textContent = `일반 후렘 가격(갈바): ${formatPrice(result)}원`;
+  normal_result.textContent = `일반 후렘(갈바) ${width} * ${height} = ${formatPrice(result)}원`;
 });
 
 // 가격 포맷 함수
