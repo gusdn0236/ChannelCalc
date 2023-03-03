@@ -166,7 +166,7 @@ galbaBar.addEventListener("click", () => {
 // 얼마늄바 후렘 계산 버튼 클릭 시
 alminumBar_calc_btn.addEventListener("click", () => {
   const length = alminumBar_length.value;
-  const price = 35000;
+  const price = 45000;
   const result = length * price;
   alminumBar_result.textContent = `알미늄 후렘 ${length}M = ${formatPrice(result)}원`;
 });
