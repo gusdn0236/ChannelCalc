@@ -183,7 +183,7 @@ alminumBar_calc_btn.addEventListener("click", () => {
   const length = alminumBar_length.value;
   const price = 45000;
   const result = length * price;
-  alminumBar_result.textContent = `알미늄 후렘 ${length}M = ${formatPrice(result)}원`;
+  alminumBar_result.textContent = `알미늄 바 후렘 ${length}M = ${formatPrice(result)}원`;
 });
 
 // 갈바 후렘 계산 버튼 클릭 시
@@ -199,7 +199,7 @@ galbaBar_calc_btn.addEventListener("click", () => {
     price = 60000;
   }
   const result = length * price;
-  galbaBar_result.textContent = `갈바 후렘 가격: ${formatPrice(result)}원`;
+  galbaBar_result.textContent = `갈바 바 후렘 ${height}mm, ${length}M = ${formatPrice(result)}원`;
 });
 
 // 일반 후렘 계산 버튼 클릭 시
