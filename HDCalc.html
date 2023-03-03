@@ -69,17 +69,19 @@
         <div id="alminumBarCalc">
           <!-- 알미늄 후렘 계산기 내용 -->
           <div id="alminumBar-calc" class="calc-box">
+            <h3 class="calcName">알미늄 후렘 계산기</h3>
             <label for="alminumBar-length">길이 (m):</label>
             <input type="number" id="alminumBar-length" />
-            <button id="alminumBar-calc-btn">계산하기</button>
+            <button id="alminumBar-calc-btn" class="calcButton">계산하기</button>
             <br />
-            <strong id="alminumBar-result" class="result"></strong>
+            <div id="alminumBar-result" class="result"></div>
           </div>
         </div>
         <button id="galbaBar">갈바 후렘</button>
         <div id="galbaBarCalc">
           <!-- 갈바 후렘 계산기 내용 -->
           <div id="galbaBar-calc" class="calc-box">
+            <h3 class="calcName">갈바 후렘 계산기</h3>
             <label for="galbaBar-height">높이:</label>
             <select id="galbaBar-height">
               <option value="200">200mm</option>
@@ -88,15 +90,28 @@
             </select>
             <label for="galbaBar-length">길이 (m):</label>
             <input type="number" id="galbaBar-length" />
-            <button id="galbaBar-calc-btn">계산하기</button>
+            <button id="galbaBar-calc-btn" class="calcButton">계산하기</button>
             <br />
-            <strong id="galbaBar-result" class="result"></strong>
+            <div id="galbaBar-result" class="result"></div>
           </div>
         </div>
       </div>
 
-      <button id="normalFrame" class="frameButton">일반 후렘 추가</button>
-      <div id="normalContainer" class="canHide"></div>
+      <button id="normalFrame" class="frameButton">일반 후렘 추가(갈바)</button>
+      <div id="normalContainer" class="canHide">
+        <div id="normalCalc">
+          <!-- 일반 후렘 계산기 내용 -->
+          <div id="normal-calc" class="calc-box">
+            <h3 class="calcName">일반 후렘 계산기</h3>
+            <label for="normal-width">가로 (mm):</label>
+            <input type="number" id="normal-width" />
+            <label for="normal-height">세로 (mm):</label>
+            <input type="number" id="normal-height" />
+            <button id="normal-calc-btn" class="calcButton">계산하기</button>
+            <div id="normal-result" class="result"></div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- js 연결 -->
     <script src="HDCalc.js"></script>

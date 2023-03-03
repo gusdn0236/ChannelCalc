@@ -112,6 +112,18 @@ const galbaBar = document.getElementById("galbaBar");
 const alminumBarCalc = document.getElementById("alminumBarCalc");
 const galbaBarCalc = document.getElementById("galbaBarCalc");
 
+//일반후렘 계산기변수(div 박스묶음용)
+const normalCalc = document.getElementById("normalCalc");
+
+//실제 계산용 일반후렘 변수
+const normal_calc = document.getElementById("normal-calc");
+const normal_width = document.getElementById("normal-width");
+const normal_height = document.getElementById("normal-height");
+const normal_result = document.getElementById("normal-result");
+
+//실제 계산용 일반후렘 계산하기 버튼
+const normal_calc_btn = document.getElementById("normal-calc-btn");
+
 //실제 계산용 알미늄 바 변수
 const alminumBar_calc = document.getElementById("alminumBar-calc");
 const alminumBar_length = document.getElementById("alminumBar-length");
@@ -119,6 +131,9 @@ const alminumBar_result = document.getElementById("alminumBar-result");
 
 //실제 계산용 갈바 바 변수
 const galbaBar_calc = document.getElementById("galbaBar-calc");
+const galbaBar_length = document.getElementById("galbaBar-length");
+const galbaBar_height = document.getElementById("galbaBar-height");
+const galbaBar_result = document.getElementById("galbaBar-result");
 
 //실제 계산용 알미늄,갈바 계산하기버튼
 const alminumBar_calc_btn = document.getElementById("alminumBar-calc-btn");
@@ -171,6 +186,30 @@ alminumBar_calc_btn.addEventListener("click", () => {
   alminumBar_result.textContent = `알미늄 후렘 ${length}M = ${formatPrice(result)}원`;
 });
 
+// 갈바 후렘 계산 버튼 클릭 시
+galbaBar_calc_btn.addEventListener("click", () => {
+  const height = galbaBar_height.value;
+  const length = galbaBar_length.value;
+  let price;
+  if (height === "200") {
+    price = 45000;
+  } else if (height === "300") {
+    price = 50000;
+  } else if (height === "400") {
+    price = 60000;
+  }
+  const result = length * price;
+  galbaBar_result.textContent = `갈바 후렘 가격: ${formatPrice(result)}원`;
+});
+
+// 일반 후렘 계산 버튼 클릭 시
+normal_calc_btn.addEventListener("click", () => {
+  const width = normal_width.value;
+  const height = normal_height.value;
+  const result = ((width * height) / 1000000) * 120000;
+  normal_result.textContent = `일반 후렘 가격(갈바): ${formatPrice(result)}원`;
+});
+
 // 가격 포맷 함수
 function formatPrice(price) {
   return new Intl.NumberFormat("ko-KR", { maximumSignificantDigits: 3 }).format(price);
@@ -178,6 +217,19 @@ function formatPrice(price) {
 
 // 알미늄바 엔터키로 계산하기-M에 focus이벤트
 alminumBar_length.addEventListener("focus", () => {
+  document.addEventListener("keydown", calculateOnEnter);
+});
+
+//갈바 바 엔터키로 계산하기 -M에 focus 이벤트
+galbaBar_length.addEventListener("focus", () => {
+  document.addEventListener("keydown", calculateOnEnter);
+});
+
+// 일반후렘 엔터키로 계산하기-M에 focus이벤트
+normal_width.addEventListener("focus", () => {
+  document.addEventListener("keydown", calculateOnEnter);
+});
+normal_height.addEventListener("focus", () => {
   document.addEventListener("keydown", calculateOnEnter);
 });
 

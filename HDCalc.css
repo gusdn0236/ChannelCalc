@@ -25,10 +25,43 @@ input {
   margin-top: 0.5rem; /* 수정된 부분 */
 }
 
+/*  떙떙후렘 계산기 출력 */
+.calcName {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+/* 바 후렘추가 - 갈바후렘 버튼 */
+#galbaBar {
+  padding: 0.2rem 0.2rem;
+  font-size: 1rem;
+  background-color: #66d7c6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.2rem;
+  flex-direction: none;
+}
+
+/* 바 후렘추가 - 알미늄후렘 버튼  */
+#alminumBar {
+  padding: 0.2rem 0.2rem;
+  font-size: 1rem;
+  background-color: #66d7c6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.2rem;
+  flex-direction: none;
+}
+
 #frameCalculate {
   border: 1px solid rgb(231, 213, 213);
   padding: 30px;
 }
+/* 계산하기 버튼 */
 .calcButton {
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -37,7 +70,7 @@ input {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 0.5rem; /* 수정된 부분 */
+  margin-top: 0.5rem;
 }
 
 .frameButton {
@@ -50,6 +83,10 @@ input {
   cursor: pointer;
   margin-top: 0.5rem; /* 수정된 부분 */
   flex-direction: none;
+}
+.result {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #result {
