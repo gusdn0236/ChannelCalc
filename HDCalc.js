@@ -96,6 +96,145 @@ document.getElementById("quantity").addEventListener("click", function () {
   }
 });
 
+//LED관련 변수
+// LED 글씨체 버튼 변수
+const headLineButton = document.getElementById("headLineButton");
+const godikButton = document.getElementById("godikButton");
+const squareButton = document.getElementById("squareButton");
+const circleButton = document.getElementById("circleButton");
+
+//LED 수량 변수
+const ledResult = document.getElementById("ledResult");
+
+let index = -1; // index를 전역 변수로 설정합니다.
+let channelType = "";
+
+// 버튼 클릭 시 index 설정하는 함수
+headLineButton.addEventListener("click", function () {
+  index = 0;
+  channelType = "헤드라인체";
+  ledCount();
+});
+godikButton.addEventListener("click", function () {
+  index = 1;
+  channelType = "고딕체";
+  ledCount();
+});
+squareButton.addEventListener("click", function () {
+  index = 2;
+  channelType = "정사각형";
+  ledCount();
+});
+circleButton.addEventListener("click", function () {
+  index = 3;
+  channelType = "원형";
+  ledCount();
+});
+
+// LED 개수를 반환하는 함수
+function ledCount() {
+  const size = parseInt(document.getElementById("size").value);
+  //잔넬 글자 갯수 가져오기
+  const quantityStr = parseInt(document.getElementById("quantity").value);
+
+  // LED 갯수 테이블
+  let ledNumberTable = [];
+  switch (size) {
+    case 300:
+      ledNumberTable = [15, 13, 16, 13];
+      break;
+    case 350:
+      ledNumberTable = [19, 17, 22, 18];
+      break;
+    case 400:
+      ledNumberTable = [22, 20, 28, 22];
+      break;
+    case 450:
+      ledNumberTable = [26, 24, 36, 28];
+      break;
+    case 500:
+      ledNumberTable = [30, 28, 43, 34];
+      break;
+    case 550:
+      ledNumberTable = [35, 33, 52, 41];
+      break;
+    case 600:
+      ledNumberTable = [40, 37, 61, 48];
+      break;
+    case 650:
+      ledNumberTable = [48, 42, 72, 57];
+      break;
+    case 700:
+      ledNumberTable = [55, 47, 82, 65];
+      break;
+    case 750:
+      ledNumberTable = [63, 54, 95, 75];
+      break;
+    case 800:
+      ledNumberTable = [70, 60, 107, 85];
+      break;
+    case 850:
+      ledNumberTable = [80, 68, 121, 96];
+      break;
+    case 900:
+      ledNumberTable = [90, 75, 135, 107];
+      break;
+    case 950:
+      ledNumberTable = [100, 83, 151, 119];
+      break;
+    case 1000:
+      ledNumberTable = [110, 90, 167, 131];
+      break;
+    case 1100:
+      ledNumberTable = [135, 108, 201, 159];
+      break;
+    case 1200:
+      ledNumberTable = [160, 127, 240, 188];
+      break;
+    case 1300:
+      ledNumberTable = [190, 147, 281, 221];
+      break;
+    case 1400:
+      ledNumberTable = [220, 170, 325, 256];
+      break;
+    case 1500:
+      ledNumberTable = [250, 194, 373, 294];
+      break;
+    case 1600:
+      ledNumberTable = [285, 220, 425, 334];
+      break;
+    case 1700:
+      ledNumberTable = [320, 247, 479, 377];
+      break;
+    case 1800:
+      ledNumberTable = [360, 277, 537, 422];
+      break;
+    case 1900:
+      ledNumberTable = [400, 307, 598, 470];
+      break;
+    case 2000:
+      ledNumberTable = [450, 340, 663, 521];
+      break;
+    default:
+      alert("LED가 들어갈 잔넬 사이즈를 선택해주세요.");
+      return;
+  }
+
+  // index가 설정되지 않았거나 유효한 범위를 벗어나면 경고 메시지를 출력합니다.
+  if (index === -1 || index >= ledNumberTable.length) {
+    alert("LED가 들어갈 잔넬 사이즈를 선택해주세요.");
+    return;
+  }
+
+  // index에 따라 ledNumber를 설정합니다.
+  const ledNumber = ledNumberTable[index];
+
+  const result = quantityStr * ledNumber;
+
+  // 결과를 출력합니다.
+  ledResult.innerHTML = `${channelType} 잔넬 ${size}mm / LED수량 약${ledNumber}개 x ${quantityStr}글자 = 총 ${result}개 `;
+}
+
 //바후렘, 일반후렘 버튼변수
 const barFrame = document.getElementById("barFrame");
 const normalFrame = document.getElementById("normalFrame");

@@ -7,7 +7,6 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #f8f8f3;
-  box-shadow: 0 0 10px rgba(19, 19, 19, 0.3);
 }
 
 label {
@@ -62,9 +61,23 @@ input {
   padding: 30px;
 }
 
+/* LED추가하기 div */
 #ledCalculate {
   border: 1px solid rgb(231, 213, 213);
   padding: 30px;
+}
+
+/* LED 글씨체 버튼 */
+.ledButton {
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  background-color: #68c3b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem; /* 수정된 부분 */
+  flex-direction: none;
 }
 /* 계산하기 버튼 */
 .calcButton {
