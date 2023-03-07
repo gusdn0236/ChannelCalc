@@ -136,6 +136,8 @@ function ledCount() {
   const size = parseInt(document.getElementById("size").value);
   //잔넬 글자 갯수 가져오기
   const quantityStr = parseInt(document.getElementById("quantity").value);
+  //KPL 가격
+  const kplPrice = 750;
 
   // LED 갯수 테이블
   let ledNumberTable = [];
@@ -229,10 +231,11 @@ function ledCount() {
   // index에 따라 ledNumber를 설정합니다.
   const ledNumber = ledNumberTable[index];
 
-  const result = quantityStr * ledNumber;
+  const numberResult = quantityStr * ledNumber;
+  const priceResult = kplPrice * numberResult;
 
   // 결과를 출력합니다.
-  ledResult.innerHTML = `${channelType} 잔넬 ${size}mm / LED수량 약${ledNumber}개 x ${quantityStr}글자 = 총 ${result}개 `;
+  ledResult.innerHTML = `${channelType} 잔넬 ${size}mm / 글자당 ${ledNumber}개 x ${quantityStr}글자 = KPL ${numberResult}개 조립(750원) <br> 합계: ${formatPrice(priceResult)}원 `;
 }
 
 //바후렘, 일반후렘 버튼변수
