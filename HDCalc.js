@@ -74,7 +74,7 @@ function calculate() {
   const totalPriceWithComma = totalPrice.toLocaleString();
 
   // 결과 출력
-  const result = `${document.getElementById("type").options[type - 1].text} ${size}mm  × ${quantity}개 = ${totalPriceWithComma}원`;
+  const result = `${document.getElementById("type").options[type - 1].text} ${size}mm(${formatPrice(unitPrice)}원)  × ${quantity}개 = ${totalPriceWithComma}원`;
   document.getElementById("result").innerHTML = result + "<br><br>";
 }
 

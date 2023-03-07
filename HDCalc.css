@@ -61,6 +61,11 @@ input {
   border: 1px solid rgb(231, 213, 213);
   padding: 30px;
 }
+
+#ledCalculate {
+  border: 1px solid rgb(231, 213, 213);
+  padding: 30px;
+}
 /* 계산하기 버튼 */
 .calcButton {
   padding: 0.5rem 1rem;
