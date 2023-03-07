@@ -20,18 +20,15 @@ input {
   font-size: 1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
-  margin-bottom: 1rem;
-  margin-top: 0.5rem; /* 수정된 부분 */
+  margin: 0.5rem 0 1rem 0;
 }
 
-/*  떙떙후렘 계산기 출력 */
 .calcName {
   display: inline-block;
   margin-top: 15px;
 }
 
-/* 바 후렘추가 - 갈바후렘 버튼 */
-#galbaBar {
+.barButton {
   padding: 0.2rem 0.2rem;
   font-size: 1rem;
   background-color: #66d7c6;
@@ -43,44 +40,15 @@ input {
   flex-direction: none;
 }
 
-/* 바 후렘추가 - 알미늄후렘 버튼  */
-#alminumBar {
-  padding: 0.2rem 0.2rem;
-  font-size: 1rem;
-  background-color: #66d7c6;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 0.2rem;
-  flex-direction: none;
-}
-
-#frameCalculate {
-  border: 1px solid rgb(231, 213, 213);
-  padding: 30px;
-}
-
-/* LED추가하기 div */
+#frameCalculate,
 #ledCalculate {
   border: 1px solid rgb(231, 213, 213);
   padding: 30px;
 }
 
-/* LED 글씨체 버튼 */
-.ledButton {
-  padding: 0.5rem 0.5rem;
-  font-size: 1rem;
-  background-color: #68c3b5;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 0.5rem; /* 수정된 부분 */
-  flex-direction: none;
-}
-/* 계산하기 버튼 */
-.calcButton {
+.ledButton,
+.calcButton,
+.frameButton {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   background-color: #4caf50;
@@ -91,29 +59,13 @@ input {
   margin-top: 0.5rem;
 }
 
-.frameButton {
-  padding: 0.5rem 0.5rem;
-  font-size: 1rem;
-  background-color: #4cafa0;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 0.5rem; /* 수정된 부분 */
-  flex-direction: none;
-}
-.result {
-  font-size: 20px;
-  font-weight: bold;
-}
-
+.result,
 #result {
   font-size: 20px;
   font-weight: bold;
 }
 
 @media only screen and (min-width: 768px) {
-  /* 웹사이트 크기를 변경하지 않게 하는 부분 */
   input,
   select,
   button {
