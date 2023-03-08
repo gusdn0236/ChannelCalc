@@ -1,8 +1,7 @@
 body {
   font-family: "배달의민족 주아", sans-serif;
   font-size: 16px;
-
-  background-color: #f8f8f3;
+  background-color: #e0e7e9;
   overflow: auto;
   height: 100vh;
 }
@@ -17,7 +16,7 @@ input {
   padding: 0.5rem;
   font-size: 1rem;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #354649;
   margin: 0.5rem 0 1rem 0;
 }
 
@@ -29,7 +28,7 @@ input {
 .barButton {
   padding: 0.2rem 0.2rem;
   font-size: 1rem;
-  background-color: #66d7c6;
+  background-color: #a3c6c4;
   color: white;
   border: none;
   border-radius: 5px;
@@ -40,17 +39,28 @@ input {
 
 #frameCalculate,
 #ledCalculate {
-  border: 1px solid rgb(231, 213, 213);
-  padding: 15px;
+  border: 0.5px solid #a3c6c4;
+  padding: 25px;
   margin-bottom: 200px;
+  border-radius: 15px;
+}
+
+.calcButton {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #354649;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 .ledButton,
-.calcButton,
 .frameButton {
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  background-color: #4caf50;
+  background-color: #6c7a89;
   color: white;
   border: none;
   border-radius: 5px;
