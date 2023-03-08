@@ -418,3 +418,5 @@ function calculateOnEnter(event) {
 alminumBar_length.addEventListener("blur", () => {
   document.removeEventListener("keydown", calculateOnEnter);
 });
+
+// 여기서부터 에폭시 계산기

@@ -41,11 +41,23 @@ input {
 }
 
 #frameCalculate,
-#ledCalculate {
+#ledCalculate,
+#epoxyCalculate {
   border: 0.5px solid #a3c6c4;
   padding: 25px;
   margin-bottom: 50px;
   border-radius: 15px;
+}
+
+#epoxySelectDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+#epoxySize,
+#koEng,
+#stroke {
+  margin: 10px;
 }
 
 .calcButton {
@@ -92,10 +104,9 @@ input {
   flex-direction: row;
   justify-content: center;
 }
-
+/* 에폭시계산기 컨테이너 */
 #epoxyCalc {
   display: flex;
-  flex-direction: row;
   justify-content: center;
 }
 /* 아래 여유공간 */
