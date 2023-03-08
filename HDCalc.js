@@ -246,22 +246,22 @@ function ledCount() {
   // size가 200이고, 헤드라인,고딕체일때 미들2구를 넣음
   if (size === 200) {
     if (index === 0 || index === 1) {
-      ledResult.innerHTML = `${channelType} 잔넬 ${size}mm / 글자당 ${ledNumber}개 x ${quantityStr}글자 = 미들2구 ${numberResult}개 조립(740원) <br> 합계: ${formatPrice(midPriceResult)}원 `;
+      ledResult.innerHTML = `${channelType} 잔넬 ${size}mm <br> 글자당 ${ledNumber}개 x ${quantityStr}글자 = 미들2구 ${numberResult}개 조립(740원) <br> 합계: ${formatPrice(midPriceResult)}원 `;
     } else {
-      ledResult.innerHTML = `${channelType} 잔넬 ${size}mm / 글자당 ${ledNumber}개 x ${quantityStr}글자 = KPL ${numberResult}개 조립(750원) <br> 합계: ${formatPrice(kplPriceResult)}원 `;
+      ledResult.innerHTML = `${channelType} 잔넬 ${size}mm <br> 글자당 ${ledNumber}개 x ${quantityStr}글자 = KPL ${numberResult}개 조립(750원) <br> 합계: ${formatPrice(kplPriceResult)}원 `;
     }
   }
   // size가 250이고, 헤드라인,고딕체일때 미들2구를 넣음
   else if (size === 250) {
     if (index === 0 || index === 1) {
-      ledResult.innerHTML = `${channelType} 잔넬 ${size}mm / 글자당 ${ledNumber}개 x ${quantityStr}글자 = 미들2구 ${numberResult}개 조립(740원) <br> 합계: ${formatPrice(midPriceResult)}원 `;
+      ledResult.innerHTML = `${channelType} 잔넬 ${size}mm <br> 글자당 ${ledNumber}개 x ${quantityStr}글자 = 미들2구 ${numberResult}개 조립(740원) <br> 합계: ${formatPrice(midPriceResult)}원 `;
     } else {
-      ledResult.innerHTML = `${channelType} 잔넬 ${size}mm / 글자당 ${ledNumber}개 x ${quantityStr}글자 = KPL ${numberResult}개 조립(750원) <br> 합계: ${formatPrice(kplPriceResult)}원 `;
+      ledResult.innerHTML = `${channelType} 잔넬 ${size}mm <br> 글자당 ${ledNumber}개 x ${quantityStr}글자 = KPL ${numberResult}개 조립(750원) <br> 합계: ${formatPrice(kplPriceResult)}원 `;
     }
   }
   // size가 200, 250이 아닐 때는 KPL을 넣음
   else {
-    ledResult.innerHTML = `${channelType} 잔넬 ${size}mm / 글자당 ${ledNumber}개 x ${quantityStr}글자 = KPL ${numberResult}개 조립(750원) <br> 합계: ${formatPrice(kplPriceResult)}원 `;
+    ledResult.innerHTML = `${channelType} 잔넬 ${size}mm <br> 글자당 ${ledNumber}개 x ${quantityStr}글자 = KPL ${numberResult}개 조립(750원) <br> 합계: ${formatPrice(kplPriceResult)}원 `;
   }
 }
 

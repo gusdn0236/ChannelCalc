@@ -1,12 +1,10 @@
 body {
   font-family: "배달의민족 주아", sans-serif;
   font-size: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+
   background-color: #f8f8f3;
+  overflow: auto;
+  height: 100vh;
 }
 
 label {
@@ -43,7 +41,8 @@ input {
 #frameCalculate,
 #ledCalculate {
   border: 1px solid rgb(231, 213, 213);
-  padding: 30px;
+  padding: 15px;
+  margin-bottom: 200px;
 }
 
 .ledButton,
@@ -63,6 +62,23 @@ input {
 #result {
   font-size: 20px;
   font-weight: bold;
+}
+
+#mainCalc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+#subCalc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#bottomBlank {
+  margin-bottom: 80px;
 }
 
 @media only screen and (min-width: 768px) {
