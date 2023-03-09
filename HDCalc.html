@@ -134,6 +134,11 @@
       <div id="epoxyCalculate">
         <h1>에폭시 잔넬 계산기</h1>
         <div id="epoxySelectDiv">
+          <label for="material">재질</label>
+          <select id="material">
+            <option value="갈바">갈바</option>
+            <option value="스텐">스텐</option>
+          </select>
           <label for="epoxySize">높이</label>
           <select id="epoxySize">
             <option value="100">100</option>
@@ -152,8 +157,8 @@
           </select>
           <label for="koEng">종류</label>
           <select id="koEng">
-            <option value="영문숫자">영문숫자</option>
             <option value="한글">한글</option>
+            <option value="영문숫자">영문숫자</option>
           </select>
 
           <label for="stroke">획 두께(줄)</label>
@@ -164,8 +169,12 @@
             <option value="90(4줄)">90(4줄)</option>
             <option value="110(5줄)">110(5줄)</option>
           </select>
-          <!-- 여기서부터 작업 시작하면됨 -->
-          <button class="calcButton" onclick="">계산하기</button>
+
+          <button class="calcButton" onclick="epoxyCalc()">계산하기</button>
+
+          <!-- 테스트출력용 -->
+          <div id="epoxyResult"></div>
+          <div id="epoxyPrice"></div>
         </div>
       </div>
     </div>

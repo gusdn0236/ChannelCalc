@@ -56,7 +56,8 @@ input {
 
 #epoxySize,
 #koEng,
-#stroke {
+#stroke,
+#material {
   margin: 10px;
 }
 

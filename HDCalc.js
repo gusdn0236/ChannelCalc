@@ -420,3 +420,245 @@ alminumBar_length.addEventListener("blur", () => {
 });
 
 // 여기서부터 에폭시 계산기
+function epoxyCalc() {
+  // 변수 불러오기
+  const epoxySize = document.getElementById("epoxySize").value;
+  const koEng = document.getElementById("koEng").value;
+  const stroke = document.getElementById("stroke").value;
+  const material = document.getElementById("material").value;
+
+  // 구분자를 사용하여 문자열 합치기 사이즈,한영
+  const epoxyStr = `${material}${epoxySize}${koEng}`;
+
+  //갈바단가표 입력
+  let priceTable = [];
+  switch (epoxyStr) {
+    case `갈바100한글`: {
+      priceTable = [45000, 50000];
+      break;
+    }
+    case `갈바100영문숫자`: {
+      priceTable = [35000, 40000];
+      break;
+    }
+    case `갈바125한글`: {
+      priceTable = [55000, 75000];
+      break;
+    }
+    case `갈바125영문숫자`: {
+      priceTable = [44000, 51000];
+      break;
+    }
+    case `갈바150한글`: {
+      priceTable = [65000, 84000];
+      break;
+    }
+    case `갈바150영문숫자`: {
+      priceTable = [51000, 59000, 68000];
+      break;
+    }
+    case `갈바175한글`: {
+      priceTable = [78000, 97000, 108000];
+      break;
+    }
+    case `갈바175영문숫자`: {
+      priceTable = [59000, 70000, 79000];
+      break;
+    }
+    case `갈바200한글`: {
+      priceTable = [94000, 108000, 122000];
+      break;
+    }
+    case `갈바200영문숫자`: {
+      priceTable = [66000, 79000, 88000];
+      break;
+    }
+    case `갈바225한글`: {
+      priceTable = [105000, 120000, 135000];
+      break;
+    }
+    case `갈바225영문숫자`: {
+      priceTable = [80000, 92000, 102000];
+      break;
+    }
+    case `갈바250한글`: {
+      priceTable = [116000, 132000, 150000, 164000];
+      break;
+    }
+    case `갈바250영문숫자`: {
+      priceTable = [94000, 104000, 115000, 132000];
+      break;
+    }
+    case `갈바275한글`: {
+      priceTable = [126000, 145000, 163000, 180000];
+      break;
+    }
+    case `갈바275영문숫자`: {
+      priceTable = [110000, 121000, 133000, 143000];
+      break;
+    }
+    case `갈바300한글`: {
+      priceTable = [145000, 164000, 186000, 205000, 223000];
+      break;
+    }
+    case `갈바300영문숫자`: {
+      priceTable = [125000, 138000, 150000, 163000, 176000];
+      break;
+    }
+    case `갈바325한글`: {
+      priceTable = [154000, 177000, 200000, 222000, 238000];
+      break;
+    }
+    case `갈바325영문숫자`: {
+      priceTable = [136000, 148000, 162000, 176000, 189000];
+      break;
+    }
+    case `갈바350한글`: {
+      priceTable = [165000, 189000, 213000, 238000, 262000];
+      break;
+    }
+    case `갈바350영문숫자`: {
+      priceTable = [145000, 160000, 173000, 188000, 204000];
+      break;
+    }
+    case `갈바375한글`: {
+      priceTable = [176000, 202000, 228000, 253000, 278000];
+      break;
+    }
+    case `갈바375영문숫자`: {
+      priceTable = [154000, 169000, 185000, 200000, 216000];
+      break;
+    }
+    case `갈바400한글`: {
+      priceTable = [156000, 212000, 238000, 263000, 288000];
+      break;
+    }
+    case `갈바400영문숫자`: {
+      priceTable = [164000, 179000, 195000, 210000, 226000];
+      break;
+    }
+    case `스텐100한글`: {
+      priceTable = [52000];
+      break;
+    }
+    case `스텐100영문숫자`: {
+      priceTable = [40000];
+      break;
+    }
+    case `스텐125한글`: {
+      priceTable = [70000, 77000];
+      break;
+    }
+    case `스텐125영문숫자`: {
+      priceTable = [55000, 72000];
+      break;
+    }
+    case `스텐150한글`: {
+      priceTable = [81000, 92000];
+      break;
+    }
+    case `스텐150영문숫자`: {
+      priceTable = [66000, 84000];
+      break;
+    }
+    case `스텐175한글`: {
+      priceTable = [93000, 103000, 116000];
+      break;
+    }
+    case `스텐175영문숫자`: {
+      priceTable = [77000, 97000, 103000];
+      break;
+    }
+    case `스텐200한글`: {
+      priceTable = [102000, 116000, 127000];
+      break;
+    }
+    case `스텐200영문숫자`: {
+      priceTable = [83000, 106000, 116000];
+      break;
+    }
+    case `스텐225한글`: {
+      priceTable = [113000, 126000, 140000];
+      break;
+    }
+    case `스텐225영문숫자`: {
+      priceTable = [91000, 117000, 126000];
+      break;
+    }
+    case `스텐250한글`: {
+      priceTable = [129000, 145000, 161000, 154000];
+      break;
+    }
+    case `스텐250영문숫자`: {
+      priceTable = [110000, 135000, 145000, 136000];
+      break;
+    }
+    case `스텐275한글`: {
+      priceTable = [151000, 159000, 176000, 174000];
+      break;
+    }
+    case `스텐275영문숫자`: {
+      priceTable = [136000, 147000, 159000, 156000];
+      break;
+    }
+    case `스텐300한글`: {
+      priceTable = [159000, 178000, 198000, 192000, 231000];
+      break;
+    }
+    case `스텐300영문숫자`: {
+      priceTable = [152900, 165000, 178000, 170000, 203000];
+      break;
+    }
+    case `스텐325한글`: {
+      priceTable = [173000, 193000, 215000, 215000, 251000];
+      break;
+    }
+    case `스텐325영문숫자`: {
+      priceTable = [167000, 181000, 194000, 190000, 222000];
+      break;
+    }
+    case `스텐350한글`: {
+      priceTable = [184000, 206000, 228000, 235000, 273000];
+      break;
+    }
+    case `스텐350영문숫자`: {
+      priceTable = [178000, 192000, 206000, 209000, 236000];
+      break;
+    }
+    case `스텐375한글`: {
+      priceTable = [193000, 217000, 240000, 251000, 288000];
+      break;
+    }
+    case `스텐375영문숫자`: {
+      priceTable = [187000, 202000, 217000, 221000, 249000];
+      break;
+    }
+    case `스텐400한글`: {
+      priceTable = [205000, 227000, 250000, 263000, 298000];
+      break;
+    }
+    case `스텐400영문숫자`: {
+      priceTable = [197000, 212000, 227000, 232000, 259000];
+      break;
+    }
+  }
+
+  //단가표에 해당하는 금액 가져오기. 줄에 따라 인덱스가 달라짐
+  let index = -1;
+  if (stroke === `30(1줄)`) {
+    index = 0;
+  } else if (stroke === `50(2줄)`) {
+    index = 1;
+  } else if (stroke === `70(3줄)`) {
+    index = 2;
+  } else if (stroke === `90(4줄)`) {
+    index = 3;
+  } else if (stroke === `110(5줄)`) {
+    index = 4;
+  }
+
+  if (index === -1 || index >= priceTable.length) {
+    alert("단가표에 해당 금액이 없습니다.");
+    return;
+  }
+}
