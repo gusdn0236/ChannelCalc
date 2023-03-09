@@ -158,7 +158,7 @@
           <label for="koEng">종류</label>
           <select id="koEng">
             <option value="한글">한글</option>
-            <option value="영문숫자">영문숫자</option>
+            <option value="영문,숫자">영문,숫자</option>
           </select>
 
           <label for="stroke">획 두께(줄)</label>
@@ -170,14 +170,14 @@
             <option value="110(5줄)">110(5줄)</option>
           </select>
 
+          <label for="epoxyQuantity">수량</label>
+          <input type="number" id="epoxyQuantity" value="1" min="1" />
           <button class="calcButton" onclick="epoxyCalc()">계산하기</button>
-
-          <!-- 테스트출력용 -->
-          <div id="epoxyResult"></div>
-          <div id="epoxyPrice"></div>
         </div>
+        <div id="epoxyResult" class="result"></div>
       </div>
     </div>
+
     <div id="bottomBlank"></div>
 
     <!-- js 연결 -->

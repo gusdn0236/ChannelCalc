@@ -78,14 +78,9 @@ function calculate() {
   document.getElementById("result").innerHTML = result + "<br><br>";
 }
 
-//엔터키로 계산하기 버튼 작동
-document.addEventListener("keydown", function (event) {
-  if (event.keyCode === 13) {
-    if (event.target.tagName.toLowerCase() === "input") {
-      event.preventDefault();
-      calculate();
-    }
-  }
+//잔넬계산기 엔터키로 계산하기 -M에 focus 이벤트
+quantity.addEventListener("focus", () => {
+  document.addEventListener("keydown", calculateOnEnter);
 });
 
 // 사용자가 input 박스를 클릭하면 기본값 지우기
@@ -426,6 +421,7 @@ function epoxyCalc() {
   const koEng = document.getElementById("koEng").value;
   const stroke = document.getElementById("stroke").value;
   const material = document.getElementById("material").value;
+  const epoxyQuantity = document.getElementById("epoxyQuantity").value;
 
   // 구분자를 사용하여 문자열 합치기 사이즈,한영
   const epoxyStr = `${material}${epoxySize}${koEng}`;
@@ -437,7 +433,7 @@ function epoxyCalc() {
       priceTable = [45000, 50000];
       break;
     }
-    case `갈바100영문숫자`: {
+    case `갈바100영문,숫자`: {
       priceTable = [35000, 40000];
       break;
     }
@@ -445,7 +441,7 @@ function epoxyCalc() {
       priceTable = [55000, 75000];
       break;
     }
-    case `갈바125영문숫자`: {
+    case `갈바125영문,숫자`: {
       priceTable = [44000, 51000];
       break;
     }
@@ -453,7 +449,7 @@ function epoxyCalc() {
       priceTable = [65000, 84000];
       break;
     }
-    case `갈바150영문숫자`: {
+    case `갈바150영문,숫자`: {
       priceTable = [51000, 59000, 68000];
       break;
     }
@@ -461,7 +457,7 @@ function epoxyCalc() {
       priceTable = [78000, 97000, 108000];
       break;
     }
-    case `갈바175영문숫자`: {
+    case `갈바175영문,숫자`: {
       priceTable = [59000, 70000, 79000];
       break;
     }
@@ -469,7 +465,7 @@ function epoxyCalc() {
       priceTable = [94000, 108000, 122000];
       break;
     }
-    case `갈바200영문숫자`: {
+    case `갈바200영문,숫자`: {
       priceTable = [66000, 79000, 88000];
       break;
     }
@@ -477,7 +473,7 @@ function epoxyCalc() {
       priceTable = [105000, 120000, 135000];
       break;
     }
-    case `갈바225영문숫자`: {
+    case `갈바225영문,숫자`: {
       priceTable = [80000, 92000, 102000];
       break;
     }
@@ -485,7 +481,7 @@ function epoxyCalc() {
       priceTable = [116000, 132000, 150000, 164000];
       break;
     }
-    case `갈바250영문숫자`: {
+    case `갈바250영문,숫자`: {
       priceTable = [94000, 104000, 115000, 132000];
       break;
     }
@@ -493,7 +489,7 @@ function epoxyCalc() {
       priceTable = [126000, 145000, 163000, 180000];
       break;
     }
-    case `갈바275영문숫자`: {
+    case `갈바275영문,숫자`: {
       priceTable = [110000, 121000, 133000, 143000];
       break;
     }
@@ -501,7 +497,7 @@ function epoxyCalc() {
       priceTable = [145000, 164000, 186000, 205000, 223000];
       break;
     }
-    case `갈바300영문숫자`: {
+    case `갈바300영문,숫자`: {
       priceTable = [125000, 138000, 150000, 163000, 176000];
       break;
     }
@@ -509,7 +505,7 @@ function epoxyCalc() {
       priceTable = [154000, 177000, 200000, 222000, 238000];
       break;
     }
-    case `갈바325영문숫자`: {
+    case `갈바325영문,숫자`: {
       priceTable = [136000, 148000, 162000, 176000, 189000];
       break;
     }
@@ -517,7 +513,7 @@ function epoxyCalc() {
       priceTable = [165000, 189000, 213000, 238000, 262000];
       break;
     }
-    case `갈바350영문숫자`: {
+    case `갈바350영문,숫자`: {
       priceTable = [145000, 160000, 173000, 188000, 204000];
       break;
     }
@@ -525,7 +521,7 @@ function epoxyCalc() {
       priceTable = [176000, 202000, 228000, 253000, 278000];
       break;
     }
-    case `갈바375영문숫자`: {
+    case `갈바375영문,숫자`: {
       priceTable = [154000, 169000, 185000, 200000, 216000];
       break;
     }
@@ -533,7 +529,7 @@ function epoxyCalc() {
       priceTable = [156000, 212000, 238000, 263000, 288000];
       break;
     }
-    case `갈바400영문숫자`: {
+    case `갈바400영문,숫자`: {
       priceTable = [164000, 179000, 195000, 210000, 226000];
       break;
     }
@@ -541,7 +537,7 @@ function epoxyCalc() {
       priceTable = [52000];
       break;
     }
-    case `스텐100영문숫자`: {
+    case `스텐100영문,숫자`: {
       priceTable = [40000];
       break;
     }
@@ -549,7 +545,7 @@ function epoxyCalc() {
       priceTable = [70000, 77000];
       break;
     }
-    case `스텐125영문숫자`: {
+    case `스텐125영문,숫자`: {
       priceTable = [55000, 72000];
       break;
     }
@@ -557,7 +553,7 @@ function epoxyCalc() {
       priceTable = [81000, 92000];
       break;
     }
-    case `스텐150영문숫자`: {
+    case `스텐150영문,숫자`: {
       priceTable = [66000, 84000];
       break;
     }
@@ -565,7 +561,7 @@ function epoxyCalc() {
       priceTable = [93000, 103000, 116000];
       break;
     }
-    case `스텐175영문숫자`: {
+    case `스텐175영문,숫자`: {
       priceTable = [77000, 97000, 103000];
       break;
     }
@@ -573,7 +569,7 @@ function epoxyCalc() {
       priceTable = [102000, 116000, 127000];
       break;
     }
-    case `스텐200영문숫자`: {
+    case `스텐200영문,숫자`: {
       priceTable = [83000, 106000, 116000];
       break;
     }
@@ -581,7 +577,7 @@ function epoxyCalc() {
       priceTable = [113000, 126000, 140000];
       break;
     }
-    case `스텐225영문숫자`: {
+    case `스텐225영문,숫자`: {
       priceTable = [91000, 117000, 126000];
       break;
     }
@@ -589,7 +585,7 @@ function epoxyCalc() {
       priceTable = [129000, 145000, 161000, 154000];
       break;
     }
-    case `스텐250영문숫자`: {
+    case `스텐250영문,숫자`: {
       priceTable = [110000, 135000, 145000, 136000];
       break;
     }
@@ -597,7 +593,7 @@ function epoxyCalc() {
       priceTable = [151000, 159000, 176000, 174000];
       break;
     }
-    case `스텐275영문숫자`: {
+    case `스텐275영문,숫자`: {
       priceTable = [136000, 147000, 159000, 156000];
       break;
     }
@@ -605,7 +601,7 @@ function epoxyCalc() {
       priceTable = [159000, 178000, 198000, 192000, 231000];
       break;
     }
-    case `스텐300영문숫자`: {
+    case `스텐300영문,숫자`: {
       priceTable = [152900, 165000, 178000, 170000, 203000];
       break;
     }
@@ -613,7 +609,7 @@ function epoxyCalc() {
       priceTable = [173000, 193000, 215000, 215000, 251000];
       break;
     }
-    case `스텐325영문숫자`: {
+    case `스텐325영문,숫자`: {
       priceTable = [167000, 181000, 194000, 190000, 222000];
       break;
     }
@@ -621,7 +617,7 @@ function epoxyCalc() {
       priceTable = [184000, 206000, 228000, 235000, 273000];
       break;
     }
-    case `스텐350영문숫자`: {
+    case `스텐350영문,숫자`: {
       priceTable = [178000, 192000, 206000, 209000, 236000];
       break;
     }
@@ -629,7 +625,7 @@ function epoxyCalc() {
       priceTable = [193000, 217000, 240000, 251000, 288000];
       break;
     }
-    case `스텐375영문숫자`: {
+    case `스텐375영문,숫자`: {
       priceTable = [187000, 202000, 217000, 221000, 249000];
       break;
     }
@@ -637,7 +633,7 @@ function epoxyCalc() {
       priceTable = [205000, 227000, 250000, 263000, 298000];
       break;
     }
-    case `스텐400영문숫자`: {
+    case `스텐400영문,숫자`: {
       priceTable = [197000, 212000, 227000, 232000, 259000];
       break;
     }
@@ -661,4 +657,25 @@ function epoxyCalc() {
     alert("단가표에 해당 금액이 없습니다.");
     return;
   }
+
+  const epoxyUnitPrice = priceTable[index];
+
+  const epoxyResult = epoxyUnitPrice * epoxyQuantity;
+
+  //결과 출력
+
+  document.getElementById("epoxyResult").innerHTML = `${material}에폭시 ${epoxySize}mm ${koEng} ${stroke}mm x ${epoxyQuantity}개 = ${formatPrice(epoxyResult)}원`;
 }
+
+// 사용자가 input 박스를 클릭하면 기본값 지우기
+document.getElementById("epoxyQuantity").addEventListener("click", function () {
+  const input = document.getElementById("epoxyQuantity");
+  if (input.value === "1") {
+    input.value = "";
+  }
+});
+
+//에폭시 엔터키로 계산하기 -M에 focus 이벤트
+epoxyQuantity.addEventListener("focus", () => {
+  document.addEventListener("keydown", calculateOnEnter);
+});
