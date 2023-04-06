@@ -42,7 +42,8 @@ input {
 
 #frameCalculate,
 #ledCalculate,
-#epoxyCalculate {
+#epoxyCalculate,
+#acrylCalculate {
   border: 0.5px solid #a3c6c4;
   padding: 25px;
   margin-bottom: 50px;
@@ -55,10 +56,26 @@ input {
   margin-bottom: 20px;
 }
 
+#acrylSelectDiv {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+/* 에폭시 선택지 마진 */
 #epoxySize,
 #koEng,
 #stroke,
-#material {
+#material,
+#epoxyQuantity {
+  margin: 10px;
+}
+
+/* 아크릴선택지 마진 */
+#acrylKoEng,
+#acrylT,
+#acrylH,
+#acrylQ {
   margin: 10px;
 }
 
@@ -106,8 +123,9 @@ input {
   flex-direction: row;
   justify-content: center;
 }
-/* 에폭시계산기 컨테이너 */
-#epoxyCalc {
+/* 에폭시,아크릴계산기 컨테이너 */
+#epoxyCalc,
+#acrylCalc {
   display: flex;
   justify-content: center;
 }

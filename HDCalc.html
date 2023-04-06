@@ -177,6 +177,38 @@
         <div id="epoxyResult" class="result"></div>
       </div>
     </div>
+    <!-- 여기서부터 아크릴계산기 -->
+    <div id="acrylCalc">
+      <div id="acrylCalculate">
+        <h1>아크릴/포맥스 계산기</h1>
+        <div id="acrylSelectDiv">
+          <label for="acrylKoEng">종류</label>
+          <select id="acrylKoEng">
+            <option value="영문">영문</option>
+            <option value="한글">한글</option>
+          </select>
+          <label for="acrylT">두께(T)</label>
+          <select id="acrylT">
+            <option value="2T">2T</option>
+            <option value="3T">3T</option>
+            <option value="5T">5T</option>
+            <option value="8T">8T</option>
+            <option value="10T">10T</option>
+            <option value="15T">15T</option>
+            <option value="20T">20T</option>
+          </select>
+
+          <label for="acrylH">높이(H)</label>
+          <input id="acrylH" type="number" />
+
+          <label for="acrylQ">수량</label>
+          <input id="acrylQ" type="number" value="1" />
+
+          <button class="calcButton" onclick="acrylCalc()">계산하기</button>
+        </div>
+        <div id="acrylResult" class="result"></div>
+      </div>
+    </div>
 
     <div id="bottomBlank"></div>
 
