@@ -944,6 +944,17 @@ function gomuCalc() {
 
   // 테스트 해봐야함 그리고 commit 해야함.
   // firstIndex 설정
+  // if (gomuH <= 149) {
+  //   firstIndex = 0;
+  // } else if (gomuH > 2000) {
+  //   firstIndex = -1;
+  //   document.getElementById("gomuResult").innerHTML = "단가표에 없는 사이즈입니다.";
+  // } else if (150 <= gomuH && gomuH <= 1000) {
+  //   firstIndex = Math.ceil((gomuH - 149) / 50);
+  // } else if (1001 <= gomuH && gomuH <= 2000) {
+  //   firstIndex = 7 + Math.ceil(gomuH / 100);
+  // }
+
   if (gomuH <= 149) {
     firstIndex = 0;
   } else if (gomuH > 2000) {
@@ -952,7 +963,7 @@ function gomuCalc() {
   } else if (150 <= gomuH && gomuH <= 1000) {
     firstIndex = Math.ceil((gomuH - 149) / 50);
   } else if (1001 <= gomuH && gomuH <= 2000) {
-    firstIndex = 7 + Math.ceil(gomuH / 100);
+    firstIndex = 17 + Math.ceil((gomuH - 999) / 100);
   }
 
   // secondIndex 설정
