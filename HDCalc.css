@@ -55,42 +55,27 @@ input {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
 }
 
 #acrylSelectDiv {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
 }
 
 #gomuSelectDiv {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
-}
-
-/* 에폭시 선택지 마진 */
-#epoxySize,
-#koEng,
-#stroke,
-#material,
-#epoxyQuantity {
-  margin: 10px;
-}
-
-/* 아크릴선택지 마진 */
-#acrylKoEng,
-#acrylT,
-#acrylH,
-#acrylQ {
-  margin: 10px;
-}
-
-/* 고무선택지 마진 */
-#gomuT,
-#gomuH,
-#gomuQ {
-  margin: 10px;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
 }
 
 .calcButton {
