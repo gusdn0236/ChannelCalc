@@ -43,7 +43,8 @@ input {
 #frameCalculate,
 #ledCalculate,
 #epoxyCalculate,
-#acrylCalculate {
+#acrylCalculate,
+#gomuCalculate {
   border: 0.5px solid #a3c6c4;
   padding: 25px;
   margin-bottom: 50px;
@@ -57,6 +58,12 @@ input {
 }
 
 #acrylSelectDiv {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+#gomuSelectDiv {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
@@ -76,6 +83,13 @@ input {
 #acrylT,
 #acrylH,
 #acrylQ {
+  margin: 10px;
+}
+
+/* 고무선택지 마진 */
+#gomuT,
+#gomuH,
+#gomuQ {
   margin: 10px;
 }
 
@@ -125,7 +139,8 @@ input {
 }
 /* 에폭시,아크릴계산기 컨테이너 */
 #epoxyCalc,
-#acrylCalc {
+#acrylCalc,
+#gomuCalc {
   display: flex;
   justify-content: center;
 }

@@ -210,6 +210,33 @@
       </div>
     </div>
 
+    <!-- 여기서부터 고무스카시계산기 -->
+    <div id="gomuCalc">
+      <div id="gomuCalculate">
+        <h1>고무스카시 계산기</h1>
+        <div id="gomuSelectDiv">
+          <label for="gomuT">두께(T),종류</label>
+          <select id="gomuT">
+            <option value="10T">10T</option>
+            <option value="10T-금은색">10T-금은색</option>
+            <option value="20,30T">20,30T</option>
+            <option value="20,30T-금은색">20,30T-금은색</option>
+            <option value="50T">50T</option>
+            <option value="50T-금은색">50T-금은색</option>
+          </select>
+
+          <label for="gomuH">높이(H)</label>
+          <input id="gomuH" type="number" />
+
+          <label for="gomuQ">수량</label>
+          <input id="gomuQ" type="number" value="1" />
+
+          <button class="calcButton" onclick="gomuCalc()">계산하기</button>
+        </div>
+        <div id="gomuResult" class="result"></div>
+      </div>
+    </div>
+
     <div id="bottomBlank"></div>
 
     <!-- js 연결 -->

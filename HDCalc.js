@@ -892,3 +892,125 @@ acrylQ.addEventListener("focus", () => {
 acrylH.addEventListener("focus", () => {
   document.addEventListener("keydown", calculateOnEnter);
 });
+
+//
+//
+//
+// 여기서부터 고무스카시 계산기
+
+function gomuCalc() {
+  const gomuT = document.getElementById("gomuT").value;
+  const gomuH = parseInt(document.getElementById("gomuH").value);
+  const gomuQ = parseInt(document.getElementById("gomuQ").value);
+
+  //고무스카시 단가표 2차배열 priceTable[0][0] == 3000
+  let priceTable = [
+    [3000, 3500, 3000, 3500, 4000, 4500],
+    [3500, 3850, 4000, 4370, 5000, 5400],
+    [4000, 4370, 5000, 4720, 6000, 6300],
+    [5000, 5250, 6000, 5250, 7000, 7200],
+    [6000, 9000, 7000, 9000, 8000, 10500],
+    [8500, 12240, 9500, 12240, 11000, 14100],
+    [11000, 15840, 13000, 15840, 14000, 18550],
+    [14000, 20250, 16000, 20250, 18000, 23600],
+    [17000, 24840, 19500, 24840, 22000, 29000],
+    [20000, 30240, 23000, 30240, 26000, 35000],
+
+    [24000, 36000, 28000, 36000, 32000, 42000],
+    [28000, 42120, 33000, 42120, 37000, 49000],
+    [32000, 48960, 38000, 48960, 43500, 56000],
+    [38000, 56250, 43000, 56250, 50000, 65630],
+    [43000, 63900, 49000, 63900, 56000, 74550],
+    [48000, 72000, 56000, 72000, 64000, 84000],
+    [54000, 81000, 63000, 81000, 72000, 94500],
+    [62000, 90000, 70000, 90000, 80000, 105000],
+    [66000, 99900, 77000, 99900, 88000, 116500],
+    [73000, 120600, 94000, 120600, 110000, 140000],
+
+    [96000, 144000, 112000, 144000, 130000, 168000],
+    [112000, 168000, 131000, 168000, 153000, 196000],
+    [130000, 194400, 150000, 194400, 170000, 227500],
+    [150000, 225000, 175000, 225000, 200000, 262500],
+    [170000, 255600, 199000, 255600, 220000, 297500],
+    [192000, 288900, 224000, 288900, 250000, 336000],
+    [216000, 324000, 250000, 324000, 280000, 378000],
+    [240000, 360000, 280000, 360000, 320000, 420000],
+    [260000, 399600, 310000, 399600, 350000, 465500],
+  ];
+
+  // 초기 인덱스 설정
+  let firstIndex = -1;
+  let secondIndex = -1;
+
+  // 테스트 해봐야함 그리고 commit 해야함.
+  // firstIndex 설정
+  if (gomuH <= 149) {
+    firstIndex = 0;
+  } else if (gomuH > 2000) {
+    firstIndex = -1;
+    document.getElementById("gomuResult").innerHTML = "단가표에 없는 사이즈입니다.";
+  } else if (150 <= gomuH && gomuH <= 1000) {
+    firstIndex = Math.ceil((gomuH - 149) / 50);
+  } else if (1001 <= gomuH && gomuH <= 2000) {
+    firstIndex = 7 + Math.ceil(gomuH / 100);
+  }
+
+  // secondIndex 설정
+  switch (gomuT) {
+    case "10T":
+      secondIndex = 0;
+      break;
+    case "10T-금은색":
+      secondIndex = 1;
+      break;
+    case "20,30T":
+      secondIndex = 2;
+      break;
+    case "20,30T-금은색":
+      secondIndex = 3;
+      break;
+    case "50T":
+      secondIndex = 4;
+      break;
+    case "50T-금은색":
+      secondIndex = 5;
+      break;
+
+    default:
+      console.log("잘못된 고무 T사이즈입니다.");
+  }
+
+  const gomuPrice = priceTable[firstIndex]?.[secondIndex];
+
+  if (gomuPrice !== undefined) {
+    const gomuResult = gomuPrice * gomuQ;
+    document.getElementById("gomuResult").innerHTML = `고무 ${gomuT} ${gomuH}mm / ${formatPrice(gomuPrice)}원 x ${gomuQ}개 = ${formatPrice(gomuResult)}원`;
+  } else {
+    document.getElementById("gomuResult").innerHTML = "단가표에 없는 사이즈입니다. 최대 2000mm까지 입력 가능합니다.";
+  }
+}
+
+// 사용자가 input 박스를 클릭하면 기본값 지우기
+document.getElementById("gomuQ").addEventListener("click", function () {
+  const input = document.getElementById("gomuQ");
+  if (input.value === "1") {
+    input.value = "";
+  }
+});
+
+document.getElementById("gomuH").addEventListener("click", function () {
+  const input = document.getElementById("gomuH");
+  if (input.value === "1") {
+    input.value = "";
+  }
+});
+
+//아크릴 엔터키로 계산하기 -M에 focus 이벤트
+gomuQ.addEventListener("focus", () => {
+  document.addEventListener("keydown", calculateOnEnter);
+});
+
+//아크릴 엔터키로 계산하기 -M에 focus 이벤트
+gomuH.addEventListener("focus", () => {
+  document.addEventListener("keydown", calculateOnEnter);
+});
