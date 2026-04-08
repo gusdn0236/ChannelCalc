@@ -15,7 +15,7 @@
       <h1>잔넬 단가 계산기</h1>
 
       <label for="type">종류</label>
-      <select id="type" onchange="toggleStenTabs()">
+      <select id="type" onchange="toggleLangTabs()">
         <option value="1">갈바후광영문</option>
         <option value="2">갈바후광한글</option>
         <option value="3">갈바오사이</option>
@@ -59,27 +59,32 @@
         <option value="2000">2000</option>
       </select>
 
-      <div id="stenOptionDiv" class="sten-tab-container" style="display: none">
-        <div class="sten-button-group">
-          <button
-            type="button"
-            id="btnEng"
-            class="sten-select-btn active"
-            onclick="setStenLang('eng')"
-          >
-            영문
-          </button>
-          <button
-            type="button"
-            id="btnKor"
-            class="sten-select-btn"
-            onclick="setStenLang('kor')"
-          >
-            한글
-          </button>
-        </div>
-        <input type="hidden" id="stenLang" value="eng" />
+      <!-- 한 영 구분버튼 -->
+      <div
+        id="langOptionDiv"
+        class="tab-container"
+        style="display: none; margin-bottom: 15px"
+      >
+        <button
+          type="button"
+          id="btnEng"
+          class="tab-btn active"
+          onclick="setLang('eng')"
+        >
+          영문/숫자
+        </button>
+        <button
+          type="button"
+          id="btnKor"
+          class="tab-btn"
+          onclick="setLang('kor')"
+        >
+          한글
+        </button>
+        <input type="hidden" id="selectedLang" value="eng" />
       </div>
+
+      <!-- 수량 버튼 -->
       <label for="quantity">수량</label>
       <input type="number" id="quantity" value="1" min="1" />
 
