@@ -1,3 +1,34 @@
+// 전역 변수 혹은 상단에 추가
+function toggleStenTabs() {
+  const typeSelect = document.getElementById('type');
+  const stenDiv = document.getElementById('stenOptionDiv');
+
+  if (typeSelect.value === '8') {
+    stenDiv.style.display = 'flex';
+  } else {
+    stenDiv.style.display = 'none';
+  }
+}
+
+// 버튼 클릭 시 호출되는 함수
+function setStenLang(lang) {
+  // 1. 숨겨진 input에 값 저장
+  document.getElementById('stenLang').value = lang;
+
+  // 2. 버튼 디자인 변경 (active 클래스 탈부착)
+  document.getElementById('btnEng').classList.remove('active');
+  document.getElementById('btnKor').classList.remove('active');
+
+  if (lang === 'eng') {
+    document.getElementById('btnEng').classList.add('active');
+  } else {
+    document.getElementById('btnKor').classList.add('active');
+  }
+}
+
+// calculate() 함수 안에서 값을 가져올 때:
+// const selectedLang = document.getElementById('stenLang').value;
+
 function calculate() {
   // 선택된 규격, 종류, 수량 가져오기
   const size = parseInt(document.getElementById('size').value);
@@ -12,6 +43,15 @@ function calculate() {
   if (isNaN(quantity) || quantity <= 0) {
     alert('수량을 입력해주세요.');
     return;
+  }
+
+  let selectedLang = 'eng';
+  if (type === 8) {
+    // 우리가 만든 hidden input에서 값을 가져옵니다.
+    const stenLangInput = document.getElementById('stenLang');
+    if (stenLangInput) {
+      selectedLang = stenLangInput.value;
+    }
   }
 
   // 선택된 종류에 따라 가격표 설정
@@ -64,13 +104,31 @@ function calculate() {
         410000, 500000, 580000, 670000, 760000, 860000, 960000,
       ];
       break;
+
     case 8:
-      priceTable = [
-        74000, 85000, 104000, 117000, 124000, 131000, 139000, 154000, 169000,
-        193000, 208000, 223000, 251000, 275000, 328000, 350000, 380000, 430000,
-        520000, 600000, 680000, 780000, 890000, 1010000, 1130000,
-      ];
+      if (selectedLang === 'kor') {
+        // 스텐오사이 한글 단가표 (예시)
+        priceTable = [
+          85000, 85000, 104000, 117000, 124000, 131000, 139000, 154000, 169000,
+          193000, 208000, 223000, 251000, 275000, 328000, 350000, 380000,
+          430000, 520000, 600000, 680000, 780000, 890000, 1010000, 1130000,
+        ];
+      } else {
+        // 스텐오사이 영문 단가표 (아까 정리한 숫자들)
+        priceTable = [
+          74000, 74000, 104000, 117000, 124000, 131000, 139000, 154000, 169000,
+          193000, 208000, 223000, 251000, 275000, 328000, 350000, 380000,
+          430000, 520000, 600000, 680000, 780000, 890000, 1010000, 1130000,
+        ];
+      }
       break;
+    // case 8:
+    //   priceTable = [
+    //     74000, 85000, 104000, 117000, 124000, 131000, 139000, 154000, 169000,
+    //     193000, 208000, 223000, 251000, 275000, 328000, 350000, 380000, 430000,
+    //     520000, 600000, 680000, 780000, 890000, 1010000, 1130000,
+    //   ];
+    //   break;
     case 9:
       priceTable = [
         43000, 43000, 50000, 70000, 78000, 83000, 90000, 95000, 105000, 113000,

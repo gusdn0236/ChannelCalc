@@ -2,7 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "배달의민족 주아", sans-serif;
+  font-family: '배달의민족 주아', sans-serif;
   font-size: 16px;
   background-color: #e0e7e9;
   overflow: auto;
@@ -147,4 +147,46 @@ input {
   button {
     max-width: 300px;
   }
+}
+
+/* 스텐 전용 버튼 컨테이너 */
+.sten-tab-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.sten-button-group {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+}
+
+.sten-select-btn {
+  flex: 1;
+  padding: 0.5rem;
+  font-family: '배달의민족 주아', sans-serif;
+  font-size: 1rem;
+  border: 1px solid #354649;
+  background-color: white;
+  color: #354649;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* 버튼이 선택되었을 때의 스타일 */
+.sten-select-btn.active {
+  background-color: #354649;
+  color: white;
+}
+
+.sten-select-btn:hover {
+  background-color: #e0e7e9;
+}
+
+.sten-select-btn.active:hover {
+  background-color: #2a383a;
 }
